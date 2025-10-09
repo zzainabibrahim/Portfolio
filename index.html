@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Zainab Ibrahim — Portfolio</title>
+
+    <!-- Optional: Google Fonts (uncomment if you want to use them) -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet"> -->
+
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <!-- Header / top banner -->
+    <header>
+      <div class="container header-inner">
+        <h1 id="site-title">Zainab Ibrahim</h1>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <div class="hero">
+        <img src="/src/bgimage.png" alt="my" />
+      </div>
+
+      <!-- About section -->
+      <section id="about" class="card">
+        <div class="container about-inner">
+          <img
+            src="/src/myprofile..jpg"
+            alt="Profile photo of Your Name"
+            id="profile-img"
+          />
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+              A biomedical technology undergraduate developing web apps while
+              gaining hands-on experience in image processing.."
+            </p>
+            <p class="skills">
+              <strong>Skills:</strong> HTML • CSS • JavaScript • Basic Python
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects section -->
+      <section id="projects" class="card">
+        <div class="container">
+          <h2>Projects</h2>
+          <ul class="projects-list">
+            <li>
+              <h3>Portfolio Website</h3>
+              <p>
+                Personal portfolio (this site). Built with semantic HTML and
+                responsive CSS.
+              </p>
+            </li>
+            <li>
+              <h3>Image Processing Mini Project</h3>
+              <p>
+                Simple image filters and histogram display for study
+                assignments.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contact" class="card">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>
+            If you want to reach me, email:
+            <a href="mailto:you@example.com">you@example.com</a>
+          </p>
+
+          <!-- Simple contact form (non-sending placeholder) -->
+          <form
+            class="contact-form"
+            onsubmit="event.preventDefault(); const name = document.getElementById('name').value; alert(`Hey ${name} there! This is just a demo form — backend/email isn’t connected yet.`);"
+          >
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Your name"
+              required
+            />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Write a short message..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">Send (demo)</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>
+          &copy; <span id="year"></span> <strong>Zainab Ibrahim</strong> — Built
+          with semantic HTML & CSS for clean, modern design.
+        </p>
+        <p class="small-links">
+          <a
+            href="https://github.com/zzainabibrahim/Zainab-Ibrahim"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          •
+          <a
+            href="https://www.linkedin.com/in/zainab-ibrahim-950758375"
+            target="_blank"
+            rel="noopener "
+          >
+            LinkedIn
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Small nicety: set copyright year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

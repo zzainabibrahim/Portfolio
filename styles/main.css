@@ -187,6 +187,17 @@
   h1,h2,h3 { margin: 0 0 8px 0; }
   p { margin: 0 0 10px 0; color: #111827; }
   .small-links { font-size:0.9rem; color: #cbd5e1; }
+
+  /* dark mode styles*/
+  body.dark-mode{
+    background-color:#333333;
+    border-color: #555555;
+  }
+  
+  body.dark-mode header,
+  body.dark-mode footer {
+          background-color: #000000;
+  }
   
   /* ---------- Responsive ---------- */
   @media (max-width:720px){

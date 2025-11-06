@@ -1,27 +1,81 @@
 
+/* ==========================
+   Global Styles
+   ========================== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #49e9a6;
+  background-color: #f4f4f9;
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  line-height: 1.6;
+}
+
+/* ==========================
+   Layout Styles
+   ========================== */
+
+/* Header and Footer */
+header,
+footer {
+  background-color: #222; /* Try your own dark brand color */
+  color: #fff;
   text-align: center;
+  padding: 1.5em 0;
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 0.3em;
+header h1 {
+  margin: 0;
 }
 
+main {
+  padding: 2em 1em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Card Sections */
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   Component Styles
+   ========================== */
+
+/* Headings */
 h2 {
-  font-size: 1.5em;
-  color: #084231;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3em;
 }
 
-p {
-  max-width: 400px;
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Profile Image */
+#about img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%; /* circular shape */
+  display: block;
   margin: 1em auto;
+  object-fit: cover;
+}
+
+/* Footer */
+footer p {
+  font-size: 0.9em;
+  margin: 0;
+  color: #ccc;
 }

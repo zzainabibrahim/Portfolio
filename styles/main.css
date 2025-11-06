@@ -1,211 +1,27 @@
-/* styles/main.css
-   Organized with sections:
-   - Variables
-   - Global / Reset
-   - Layout
-   - Components
-   - Utilities
-*/
 
-/* ---------- Variables ---------- */
-:root{
-    --bg: #f3f4f6;          /* page background */
-    --card-bg: #ffffff;     /* section card background */
-    --accent: #0b5fff;      /* brand/accent color */
-    --muted: #6b7280;       /* muted text */
-    --dark: #0f172a;        /* header/footer dark bg */
-    --radius: 12px;
-    --container-width: 1000px;
-    --max-width: 1100px;
-  }
-
- img {
-  width: 100%;          /* make it take the full width */
-  height: 100vh;        /* full screen height */
-  object-fit: cover;    /* fill area while keeping ratio */
-  display: block;       /* remove inline gap */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #49e9a6;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
+  text-align: center;
 }
-  
-  /* ---------- Global / Base ---------- */
-  * { box-sizing: border-box; }
-  html,body { height:100%; }
-  body{
-    margin:0;
-    font-family: Arial, sans-serif; /* change to Google Font if desired */
-    background: var(--bg);
-    color: var(--dark);
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    padding-bottom: 40px; /* ensure footer not overlay */
-  }
-  
-  /* Small container helper */
-  .container{
-    width: min(92%, var(--container-width));
-    margin: 0 auto;
-  }
-  
-  /* ---------- Header ---------- */
-  header{
-    background: var(--dark);
-    color: #fff;
-    padding: 18px 0;
-    box-shadow: 0 2px 6px rgba(15,23,42,0.08);
-  }
-  .header-inner{
-    display:flex;
-    align-items:center;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  #site-title{
-    margin:0;
-    font-size: 1.4rem;
-    letter-spacing: 0.4px;
-  }
-  .nav-list{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:flex;
-    gap: 14px;
-  }
-  .nav-list a{
-    color: #fff;
-    text-decoration:none;
-    font-weight:600;
-    padding:8px 10px;
-    border-radius:8px;
-  }
-  .nav-list a:hover,
-  .nav-list a:focus{
-    background: rgba(255,255,255,0.06);
-    outline: none;
-  }
-  
-  /* ---------- Card (sections) ---------- */
-  .card{
-    background: var(--card-bg);
-    margin: 22px 0;
-    padding: 22px;
-    border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(12,14,22,0.04);
-  }
-  
-  /* Make sections feel like "cards" (from slide) */
-  main > .card:first-child {
-    margin-top: 28px;
-  }
-  
-  /* ---------- About specific ---------- */
-  .about-inner{
-    display:flex;
-    gap: 18px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  #profile-img{
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%; /* circular image */
-    border: 4px solid rgba(11,95,255,0.08);
-    box-shadow: 0 8px 20px rgba(11,95,255,0.06);
-  }
-  .about-text{
-    min-width: 220px;
-    flex:1 1 420px;
-  }
-  .skills{
-    color: var(--muted);
-    margin-top: 8px;
-  }
-  
-  /* ---------- Projects ---------- */
-  .projects-list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
-  .projects-list li{
-    background: linear-gradient(180deg, rgba(11,95,255,0.03), rgba(11,95,255,0.01));
-    padding: 12px;
-    border-radius: 10px;
-  }
-  
-  /* ---------- Contact form ---------- */
-  .contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    margin-top:12px;
-    max-width:600px;
-  }
-  .contact-form input,
-  .contact-form textarea{
-    padding:10px 12px;
-    border-radius:8px;
-    border:1px solid rgba(10,10,10,0.08);
-    font-size:0.95rem;
-    background: #fff;
-  }
-  .contact-form label{
-    font-weight:600;
-    font-size:0.9rem;
-  }
-  .btn{
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight:600;
-  }
-  .btn:hover{ opacity:0.95; }
-  
-  /* ---------- Footer ---------- */
-  footer{
-    margin-top: 28px;
-    background: var(--dark);
-    color:#fff;
-    padding: 16px 0;
-    text-align:center;
-    border-radius: 8px;
-  }
-  footer p { margin: 6px 0; color: #e6eefc; }
-  footer a { color: #cfe0ff; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  
-  /* ---------- Typography improvements (from slide) ---------- */
-  h1,h2,h3 { margin: 0 0 8px 0; }
-  p { margin: 0 0 10px 0; color: #111827; }
-  .small-links { font-size:0.9rem; color: #cbd5e1; }
 
-  /* dark mode styles*/
-  body.dark-mode{
-    background-color:#333333;
-    border-color: #555555;
-  }
-  
-  body.dark-mode header,
-  body.dark-mode footer {
-          background-color: #000000;
-  }
-  
-  /* ---------- Responsive ---------- */
-  @media (max-width:720px){
-    .header-inner { flex-direction:column; gap:10px; align-items:flex-start; }
-    #profile-img { width: 110px; height:110px; }
-    .projects-list { grid-template-columns: 1fr; }
-  }
-  
-  /* ---------- Utility helpers (optional) ---------- */
-  .text-center{ text-align:center; }
-  .muted { color: var(--muted); font-size:0.95rem; }
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #084231;
+}
+
+p {
+  max-width: 400px;
+  margin: 1em auto;
+}

@@ -1,26 +1,44 @@
-// ============================
-// Week 4: Client-Side Interactivity
-// ============================
 
-// Check if JS is working
-console.log("JavaScript is connected!");
+// ===============================
+// THEME TOGGLE FUNCTIONALITY
+// ===============================
 
-// Select important elements
+console.log("✅ JavaScript connected successfully!");
+
 const body = document.querySelector("body");
 const toggleButton = document.querySelector("#theme-toggle");
 
-// Add a click event listener
-toggleButton.addEventListener("click", function () {
-  // Toggle the dark-mode class on the body
-  body.classList.toggle("dark-mode");
-
-  // Change the button text and emoji dynamically
+// Function to toggle themes
+function toggleTheme() {
   if (body.classList.contains("dark-mode")) {
+    body.classList.remove("dark-mode");
+    body.classList.add("light-mode");
+    toggleButton.textContent = "🌙 Dark Mode";
+  } else {
+    body.classList.remove("light-mode");
+    body.classList.add("dark-mode");
+    toggleButton.textContent = "☀ Light Mode";
+  }
+
+  // Save preference in localStorage
+  const currentTheme = body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("theme", currentTheme);
+}
+
+// Apply saved theme on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    body.classList.remove("light-mode");
     toggleButton.textContent = "☀ Light Mode";
   } else {
+    body.classList.add("light-mode");
+    body.classList.remove("dark-mode");
     toggleButton.textContent = "🌙 Dark Mode";
   }
 
-  // For debugging
-  console.log("Dark mode active:", body.classList.contains("dark-mode"));
+  // Attach listener after confirming element exists
+  toggleButton.addEventListener("click", toggleTheme);
 });
